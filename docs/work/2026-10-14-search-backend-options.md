@@ -194,3 +194,7 @@ Budget per tier (F12):
 - **Owner decisions:**
   - Which provider ships first: a keyed API (Brave, Tavily or Exa), SearXNG, or both?
   - Is a key requirement acceptable for a "local" tool?
+
+## Plan additions
+
+- **2026-10-14, owner:** the API keys for Brave, Exa and TinyFish go into the vinted-offers web project's secrets (`src/VintedOffers.Web` in the `vinted-offers` repo, user-secrets id `vinted-offers-7c1f4b52`). No key lands in a tracked file. `scripts/copy-search-secrets.sh` copies the `Search:ApiKey:*` entries from there into ai-hero-rat's own user secrets (`ai-hero-rat-c3af1c6c`), passing values only through a pipe and printing key names only. TinyFish was not covered by this research, so its pricing and terms are still unread.
