@@ -64,6 +64,22 @@ Or add it to an MCP configuration file by hand:
 
 The server connects, but lists no tools until search lands.
 
+## Search API keys
+
+`serve` reads search API keys from the tool's .NET user-secrets store (id `ai-hero-rat-c3af1c6c`).
+Keys live outside the repository, and `serve` still starts when the store is missing.
+The expected keys are `Search:ApiKey:Brave`, `Search:ApiKey:Exa` and `Search:ApiKey:TinyFish`.
+
+Set one by hand:
+
+```bash
+dotnet user-secrets set "Search:ApiKey:Brave" "<key>" --id ai-hero-rat-c3af1c6c
+```
+
+Or copy all `Search:ApiKey:*` entries from another project's store with
+[`scripts/copy-search-secrets.sh`](scripts/copy-search-secrets.sh) `[source-id]`. It passes values
+through a pipe and prints only key names.
+
 ## Documentation
 
 - [Contributing](CONTRIBUTING.md)
