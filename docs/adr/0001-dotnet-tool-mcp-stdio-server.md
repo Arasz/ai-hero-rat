@@ -15,9 +15,11 @@ already has working conventions for build, tests, hooks, and releases.
   `McpServer` package type.
 - Speak MCP over **stdio**, using the ModelContextProtocol C# SDK on the Generic Host.
   Stdout is reserved for JSON-RPC; all logging goes to stderr.
-- Parse the command line with **System.CommandLine** and render console output through
-  **Spectre.Console**, passed in as `IAnsiConsole` so tests can swap in a test console.
-- Inherit ai-raccoon's conventions: VERSION-driven versioning, central package management,
+- Parse the command line with **Spectre.Console.Cli** and render console output through
+  **Spectre.Console**. Commands receive `IAnsiConsole` through a small container-backed registrar,
+  so tests can swap in a test console and drive the app with `CommandAppTester`.
+  ai-raccoon uses System.CommandLine; this project deliberately differs, at the owner's call.
+- Inherit the rest of ai-raccoon's conventions: VERSION-driven versioning, central package management,
   warnings as errors, xunit.v3 on the Microsoft Testing Platform, guard clauses from
   CommunityToolkit.Diagnostics, source-generated logging.
 

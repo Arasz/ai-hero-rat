@@ -1,24 +1,26 @@
 using CommunityToolkit.Diagnostics;
 using Spectre.Console;
+using Spectre.Console.Cli;
 
 namespace AiHeroRat.Version;
 
-/// <summary>Writes the bare semver of a build to a console, dropping any <c>+sha</c> suffix.</summary>
-internal sealed class VersionCommand
+/// <summary>Writes the bare semver of the build to the console.</summary>
+internal sealed class VersionCommand : Command
 {
     private readonly IAnsiConsole _console;
+    private readonly BuildVersion _version;
 
-    public VersionCommand(IAnsiConsole console)
+    public VersionCommand(IAnsiConsole console, BuildVersion version)
     {
         Guard.IsNotNull(console);
+        Guard.IsNotNull(version);
         _console = console;
+        _version = version;
     }
 
-    public void Run(string informationalVersion)
+    public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
-        Guard.IsNotNullOrWhiteSpace(informationalVersion);
-        var plusIndex = informationalVersion.IndexOf('+');
-        var bare = plusIndex < 0 ? informationalVersion : informationalVersion[..plusIndex];
-        _console.WriteLine(bare);
+        _console.WriteLine(_version.Bare);
+        return 0;
     }
 }

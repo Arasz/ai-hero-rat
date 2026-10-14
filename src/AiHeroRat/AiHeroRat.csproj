@@ -30,7 +30,8 @@
         <PackageReference Include="Microsoft.Extensions.Hosting"/>
         <PackageReference Include="ModelContextProtocol"/>
         <PackageReference Include="Spectre.Console"/>
-        <PackageReference Include="System.CommandLine"/>
+        <PackageReference Include="Spectre.Console.Cli"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection"/>
     </ItemGroup>
 
     <ItemGroup>
