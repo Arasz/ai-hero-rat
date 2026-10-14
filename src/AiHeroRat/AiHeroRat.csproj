@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <IsPackable>true</IsPackable>
+        <PackAsTool>true</PackAsTool>
+        <PackageType>McpServer</PackageType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageId>ai-hero-rat</PackageId>
+        <ToolCommandName>ai-hero-rat</ToolCommandName>
+        <PackageTags>ai mcp mcp-server model-context-protocol agent web-search search dotnet-tool global-tool stdio dotnet</PackageTags>
+        <PackageReleaseNotes>https://github.com/Arasz/ai-hero-rat/releases</PackageReleaseNotes>
+        <Authors>Rafał Araszkiewicz</Authors>
+        <Copyright>Copyright (c) 2026 Rafał Araszkiewicz</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/Arasz/ai-hero-rat</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Arasz/ai-hero-rat</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>An MCP server, shipped as a dotnet global tool, that will give AI agents local web search. Initialization stage: the server starts but exposes no tools yet.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="/"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Diagnostics"/>
+        <PackageReference Include="JetBrains.Annotations"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting"/>
+        <PackageReference Include="ModelContextProtocol"/>
+        <PackageReference Include="Spectre.Console"/>
+        <PackageReference Include="Spectre.Console.Cli"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="AiHeroRat.Tests"/>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,51 @@
+{
+  "$schema": "./schemas/config.schema.json",
+  "frameworkVersion": "0.191.0",
+  "project": {
+    "name": "AiHeroRat",
+    "summary": "C# .NET 10 MCP server, shipped as a dotnet global tool, that gives AI agents local web search.",
+    "domain": "Lets AI coding agents such as Claude Code search the web through a local Model Context Protocol server."
+  },
+  "stacks": [
+    "dotnet",
+    "mcp",
+    "github",
+    "ai-raccoon",
+    "changelog"
+  ],
+  "agents": [
+    "claude",
+    "copilot",
+    "hermes",
+    "pi"
+  ],
+  "sourceControl": {
+    "platform": "github",
+    "repoUrl": "https://github.com/Arasz/ai-hero-rat",
+    "projectUrl": null
+  },
+  "commands": {
+    "build": "dotnet build",
+    "test": "dotnet test"
+  },
+  "personaRouting": [
+    {
+      "work": "architecture, design decisions, project structure",
+      "agent": "architect"
+    },
+    {
+      "work": "tests, test strategy, test coverage",
+      "agent": "test-engineer"
+    },
+    {
+      "work": "code review, quality gates, PR review",
+      "agent": "code-reviewer"
+    },
+    {
+      "work": "C#/.NET implementation, MCP tools, backend work",
+      "agent": "dotnet-engineer"
+    }
+  ],
+  "skillScope": "default",
+  "docs": {}
+}

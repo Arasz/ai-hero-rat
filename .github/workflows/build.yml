@@ -1,0 +1,33 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6
+        with:
+          global-json-file: global.json
+      - name: Restore
+        run: dotnet restore AiHeroRat.slnx
+      - name: Build
+        run: dotnet build AiHeroRat.slnx -c Release --no-restore
+      - name: Test
+        run: dotnet test -c Release --no-build
+      - name: Pack
+        run: dotnet pack src/AiHeroRat -c Release --no-build
+      - name: Check the package exists
+        run: test -f .nupkg/ai-hero-rat.$(cat VERSION).nupkg
