@@ -76,10 +76,6 @@ Set one by hand:
 dotnet user-secrets set "Search:ApiKey:Brave" "<key>" --id ai-hero-rat-c3af1c6c
 ```
 
-Or copy all `Search:ApiKey:*` entries from another project's store with
-[`scripts/copy-search-secrets.sh`](scripts/copy-search-secrets.sh) `[source-id]`. It passes values
-through a pipe and prints only key names.
-
 ## Documentation
 
 - [Contributing](CONTRIBUTING.md)

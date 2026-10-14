@@ -197,4 +197,4 @@ Budget per tier (F12):
 
 ## Plan additions
 
-- **2026-10-14, owner:** the API keys for Brave, Exa and TinyFish go into the vinted-offers web project's secrets (`src/VintedOffers.Web` in the `vinted-offers` repo, user-secrets id `vinted-offers-7c1f4b52`). No key lands in a tracked file. `scripts/copy-search-secrets.sh` copies the `Search:ApiKey:*` entries from there into ai-hero-rat's own user secrets (`ai-hero-rat-c3af1c6c`), passing values only through a pipe and printing key names only. TinyFish was not covered by this research, so its pricing and terms are still unread.
+- **2026-10-14, owner:** the API keys for Brave, Exa and TinyFish go into the vinted-offers web project's secrets (`src/VintedOffers.Web` in the `vinted-offers` repo, user-secrets id `vinted-offers-7c1f4b52`). No key lands in a tracked file. The `Search:ApiKey:*` entries were copied once from there into ai-hero-rat's own user secrets (`ai-hero-rat-c3af1c6c`), which `serve` loads. TinyFish was not covered by this research, so its pricing and terms are still unread.

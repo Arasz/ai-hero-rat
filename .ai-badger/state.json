@@ -2,7 +2,7 @@
   "lastUpdated": "2026-10-14",
   "next": "Owner decision on the first search provider (keyed API: Brave/Tavily/Exa, SearXNG, or both) per docs/work/2026-10-14-search-backend-options.md; then implement web_search tier 1 (urls).",
   "plan": [
-    "Search API keys (Search:ApiKey:Brave/Exa/TinyFish) live in the vinted-offers web project's user secrets (vinted-offers-7c1f4b52); scripts/copy-search-secrets.sh copies them into ai-hero-rat's own user secrets (ai-hero-rat-c3af1c6c) without printing values."
+    "Search API keys (Search:ApiKey:Brave/Exa/TinyFish) live in the vinted-offers web project's user secrets (vinted-offers-7c1f4b52) and were copied once into ai-hero-rat's own user secrets (ai-hero-rat-c3af1c6c), which serve loads."
   ],
   "completedTasks": [
     {
