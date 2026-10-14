@@ -1,0 +1,12 @@
+pre-commit:
+  commands:
+    format:
+      glob: "*.cs"
+      run: dotnet format AiHeroRat.slnx --verify-no-changes --include {staged_files}
+
+pre-push:
+  commands:
+    build:
+      run: dotnet build AiHeroRat.slnx
+    test:
+      run: dotnet test
