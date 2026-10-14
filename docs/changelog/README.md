@@ -8,4 +8,5 @@ Keep it short.
 
 ## Releases
 
+- [0.2.0 search secrets](0.2.0-search-secrets.md)
 - [0.1.0 initialize](0.1.0-initialize.md)

@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
         <OutputType>Exe</OutputType>
+        <UserSecretsId>ai-hero-rat-c3af1c6c</UserSecretsId>
         <IsPackable>true</IsPackable>
         <PackAsTool>true</PackAsTool>
         <PackageType>McpServer</PackageType>
