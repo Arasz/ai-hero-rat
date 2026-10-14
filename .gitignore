@@ -4,3 +4,22 @@
 .ai-badger/task-tracking/*.db-shm
 .ai-badger.bckp/
 # END ai-badger managed block
+
+# .NET build output and packages
+bin/
+obj/
+/.nupkg/
+/.nupkg-local/
+**/TestResults/
+
+# IDE and OS state
+.idea/
+riderModule.iml
+/_ReSharper.Caches/
+*.DotSettings.user
+.DS_Store
+
+# Backup and log files
+*.bak-*
+*.bak
+*.log
