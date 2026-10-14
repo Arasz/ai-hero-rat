@@ -1,5 +1,15 @@
 {
-  "lastUpdated": null,
-  "next": null,
-  "completedTasks": []
+  "lastUpdated": "2026-10-14",
+  "next": "Owner decision on the first search provider (keyed API: Brave/Tavily/Exa, SearXNG, or both) per docs/work/2026-10-14-search-backend-options.md; then implement web_search tier 1 (urls).",
+  "completedTasks": [
+    {
+      "id": "ahr-initialize-dotnet-mcp-websearch-repo",
+      "title": "Initialize the repository",
+      "summary": ".NET 10 dotnet-tool MCP server skeleton (Spectre.Console.Cli; serve/version), xunit.v3 tests, lefthook, build workflow, docs, ai-badger scaffold.",
+      "pr": 1,
+      "merged": true,
+      "mergeCommit": "53d605c",
+      "date": "2026-10-14"
+    }
+  ]
 }
