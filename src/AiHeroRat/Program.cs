@@ -11,9 +11,10 @@ var version = new Command("version", "Print the tool version.");
 version.SetAction(_ =>
 {
     var informationalVersion = Assembly.GetExecutingAssembly()
-        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion ?? "0.0.0";
-    new VersionCommand(AnsiConsole.Console).Run(informationalVersion);
+        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+    new VersionCommand(AnsiConsole.Console).Run(informationalVersion!);
 });
 
-var root = new RootCommand("ai-hero-rat: local web search for AI agents over MCP.") { serve, version };
+var root = new RootCommand("MCP server for agents; local web search is in development.") { serve, version };
+root.Options.Remove(root.Options.OfType<VersionOption>().Single());
 return await root.Parse(args).InvokeAsync();
