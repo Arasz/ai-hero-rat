@@ -12,6 +12,9 @@ obj/
 /.nupkg-local/
 **/TestResults/
 
+# ai-badger task worktrees
+.ai-badger/worktrees/
+
 # Python bytecode from ai-badger skill scripts
 __pycache__/
 *.pyc
